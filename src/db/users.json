@@ -1,20 +1,38 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "full_name": "John Smith",
-    "age": "16",
+    "age": 16,
     "username": "jonny",
     "password": "1234",
     "is_admin": false,
     "currency": "100000"
   },
   {
-    "id": "2",
+    "id": 2,
     "full_name": "Yusuf Ayubov",
-    "age": "24",
+    "age": 24,
     "username": "yusufxon",
     "password": "1234",
     "is_admin": true,
     "currency": "123000"
+  },
+  {
+    "id": 3,
+    "full_name": "NurMuhammad Raimov",
+    "age": 18,
+    "username": "nurmuhammadjon",
+    "password": "$2a$10$iyg1dnMp0bt2bUng/.z69uad/1zvYN2/NQtndtmD5mfJxbcBOxXqy",
+    "is_admin": false,
+    "currency": 0
+  },
+  {
+    "id": 4,
+    "full_name": "She'rozbek Baxtiyorov",
+    "age": 10,
+    "username": "sherozbek17",
+    "password": "$2a$10$JMM1tiwhwIYYndHnDBY3UOLHQ1jIf6sk1phe3QkUJFQgBhytNL9sC",
+    "is_admin": false,
+    "currency": 0
   }
 ]
