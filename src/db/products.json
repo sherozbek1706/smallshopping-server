@@ -14,5 +14,13 @@
         "count": 120,
         "is_allow": false,
         "user_id": 3
+    },
+    {
+        "id": "31471ba0-bbd0-47ce-916d-40b94c29d6cb",
+        "name": "Anor",
+        "price": 12000,
+        "count": 50,
+        "is_allow": false,
+        "user_id": 2
     }
 ]

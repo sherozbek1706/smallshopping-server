@@ -10,7 +10,7 @@ export const postProducts = (req, res) => {
   try {
     const { name, price, count, user_id } = req.body;
     const data = readFile("products.json");
-
+    console.log(req.user);
     const newProduct = {
       id: v4(),
       name,
