@@ -1,38 +1,20 @@
 [
-  {
-    "id": 1,
-    "full_name": "John Smith",
-    "age": 16,
-    "username": "jonny",
-    "password": "1234",
-    "is_admin": false,
-    "currency": "100000"
-  },
-  {
-    "id": 2,
-    "full_name": "Yusuf Ayubov",
-    "age": 24,
-    "username": "yusufxon",
-    "password": "1234",
-    "is_admin": true,
-    "currency": "123000"
-  },
-  {
-    "id": 3,
-    "full_name": "NurMuhammad Raimov",
-    "age": 18,
-    "username": "nurmuhammadjon",
-    "password": "$2a$10$iyg1dnMp0bt2bUng/.z69uad/1zvYN2/NQtndtmD5mfJxbcBOxXqy",
-    "is_admin": false,
-    "currency": 0
-  },
-  {
-    "id": 4,
-    "full_name": "She'rozbek Baxtiyorov",
-    "age": 10,
-    "username": "sherozbek17",
-    "password": "$2a$10$JMM1tiwhwIYYndHnDBY3UOLHQ1jIf6sk1phe3QkUJFQgBhytNL9sC",
-    "is_admin": false,
-    "currency": 0
-  }
+    {
+        "id": "5753e9cc-c7ec-4800-8282-42181f925720",
+        "full_name": "NurMuhammad Raimov",
+        "age": 18,
+        "username": "nurmuhammad",
+        "password": "$2a$10$znabHXmr4zMZBu6RojrpWe6P8qGe/yFL.aJ22FgfJ9zZlJMf.HP/q",
+        "is_admin": false,
+        "currency": 0
+    },
+    {
+        "id": "524e150a-eed6-4c63-853a-1ae4fe60145d",
+        "full_name": "She'rozbek Baxtiyorov",
+        "age": 19,
+        "username": "sherozbek17",
+        "password": "$2a$10$6frb1rVpCuIm5WUjgvrImeHAz4DsQtFu7eyMjQ6WagE/hM1yyoJXi",
+        "is_admin": false,
+        "currency": 0
+    }
 ]
