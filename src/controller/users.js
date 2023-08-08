@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken'
 import { readFile, writeFile } from '../utils/lib/fs.js'
 import bcrypt from 'bcryptjs/dist/bcrypt.js'
 import { config } from '../utils/config/index.js'
+import { v4 } from 'uuid'
 
 export const usersPost = async (req, res) => {
   try {
@@ -18,7 +19,7 @@ export const usersPost = async (req, res) => {
     }
 
     const newUser = {
-      id: data.at(-1)?.id + 1 || 1,
+      id: v4(),
       full_name,
       age,
       username,
@@ -113,26 +114,34 @@ export const usersGetOne = (req, res) => {
   try {
     const { id } = req.params
     const data = readFile('users.json')
-    const user = data.find((u) => u.id == id)
+
     if (!data) {
       return res.status(400).json({
         status: 400,
         data: null,
-        msg: 'Users not found',
+        msg: 'Users data not found',
       })
     }
 
+    const user = data.find((u) => u.id == id)
+
     if (!user) {
-      res.status(200).json({
+      return res.status(200).json({
         status: 200,
-        data: data,
-        msg: 'These are all users',
+        data: null,
+        msg: 'This user is not found',
       })
     }
+
+    res.status(200).json({
+      status: 200,
+      data: user,
+      msg: 'ok',
+    })
   } catch (error) {
     res.status(500).json({
       status: 500,
-      msg: error.msg,
+      msg: error.message,
     })
   }
 }
