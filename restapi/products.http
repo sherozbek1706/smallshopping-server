@@ -3,8 +3,19 @@ POST http://localhost:5000/products
 Content-Type: application/json
 
 {
-  "name":"Olma",
-  "price": 5000,
-  "count": 10,
-  "user_id":1
+  "name":"Anor",
+  "price": 12000,
+  "count": 50,
+  "user_id":2
 }
+
+
+### GET PRODUCT
+GET http://localhost:5000/products
+Content-Type: application/json
+
+
+
+### DELETE PRODUCT
+DELETE http://localhost:5000/products/ee7f5627-a0c8-4bf3-827c-4fa5a0ea7465
+Content-Type: application/json

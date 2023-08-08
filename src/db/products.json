@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "id": "aa5154f5-c9f0-4458-805c-baac72bb9a78",
+        "name": "Olma",
+        "price": 5000,
+        "count": 10,
+        "is_allow": false,
+        "user_id": 1
+    }
+]
