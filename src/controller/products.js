@@ -57,6 +57,33 @@ export const getProducts = (req, res) => {
   }
 };
 
+export const getOneProducts = (req, res) => {
+  try {
+    const data = readFile("products.json");
+    const { id } = req.params;
+
+    const productIdx = data.findIndex((prod) => prod.id == id);
+
+    if (productIdx == -1) {
+      return res.status(404).json({
+        status: 404,
+        msg: "Product not found!",
+      });
+    }
+
+    const product = data.find((prod) => prod.id == id);
+
+    res.status(200).json({
+      status: 200,
+      data:product,
+    });
+  } catch (error) {
+    res.status(500).json({
+      msg: error.message,
+    });
+  }
+};
+
 /**
  *
  * @param {express.Request} req
@@ -78,11 +105,10 @@ export const deleteProducts = (req, res) => {
     }
 
     const deletedProduct = data.find((prod) => prod.id == id);
-    
+
     data.splice(productIdx, 1);
 
     writeFile("products.json", data);
-
 
     res.status(200).json({
       status: 200,

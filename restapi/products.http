@@ -14,6 +14,9 @@ Content-Type: application/json
 GET http://localhost:5000/products
 Content-Type: application/json
 
+### GET ONE PRODUCT
+GET http://localhost:5000/products/aa5154f5-c9f0-4458-805c-baac72bb9a78
+Content-Type: application/json
 
 
 ### DELETE PRODUCT
