@@ -1,0 +1,10 @@
+### POST PRODUCT
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+  "name":"Olma",
+  "price": 5000,
+  "count": 10,
+  "user_id":1
+}
