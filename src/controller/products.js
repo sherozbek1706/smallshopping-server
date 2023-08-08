@@ -8,16 +8,16 @@ import { v4 } from "uuid";
  */
 export const postProducts = (req, res) => {
   try {
-    const { name, price, count, user_id } = req.body;
+    const { name, price, count } = req.body;
     const data = readFile("products.json");
-    console.log(req.user);
+    const { id: userId } = req.user;
     const newProduct = {
       id: v4(),
       name,
       price,
       count,
       is_allow: false,
-      user_id,
+      user_id: userId,
     };
 
     data.push(newProduct);
@@ -94,6 +94,7 @@ export const deleteProducts = (req, res) => {
   try {
     const data = readFile("products.json");
     const { id } = req.params;
+    const { id: userId } = req.user;
 
     const productIdx = data.findIndex((prod) => prod.id == id);
 
@@ -105,6 +106,13 @@ export const deleteProducts = (req, res) => {
     }
 
     const deletedProduct = data.find((prod) => prod.id == id);
+
+    if (deletedProduct.user_id != userId) {
+      return res.status(403).json({
+        status: 403,
+        msg: "This product don't has your!",
+      });
+    }
 
     data.splice(productIdx, 1);
 
@@ -127,6 +135,7 @@ export const updateProducts = (req, res) => {
     const data = readFile("products.json");
     const { id } = req.params;
     const body = req.body;
+    const { id: userId } = req.user;
 
     const productIdx = data.findIndex((prod) => prod.id == id);
 
@@ -138,6 +147,13 @@ export const updateProducts = (req, res) => {
     }
 
     const oldProduct = data.find((prod) => prod.id == id);
+
+    if (oldProduct.user_id != userId) {
+      return res.status(403).json({
+        status: 403,
+        msg: "This product don't has your!",
+      });
+    }
 
     const updatedProducts = { ...oldProduct, ...body };
 
