@@ -51,6 +51,13 @@ export const usersLogin = async (req, res) => {
       return u.username == username
     })
 
+    if (!checkUser) {
+      return res.status(404).json({
+        status: 404,
+        data: null,
+        msg: 'User not found',
+      })
+    }
     const isValidPasswd = await bcrypt.compare(password, checkUser.password)
 
     if (!isValidPasswd) {
@@ -73,20 +80,55 @@ export const usersLogin = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       status: 500,
-      msg: error.msg,
+      msg: error.message,
     })
   }
 }
 
 export const usersAll = (req, res) => {
   try {
-    const data = readFile('users.json')
+    const data = readFile('users.jso')
+
+    if (!data) {
+      return res.status(400).json({
+        status: 400,
+        data: null,
+        msg: 'Users not found',
+      })
+    }
 
     res.status(200).json({
       status: 200,
       data: data,
       msg: 'These are all users',
     })
+  } catch (error) {
+    res.status(500).json({
+      status: 500,
+      msg: error.msg,
+    })
+  }
+}
+export const usersGetOne = (req, res) => {
+  try {
+    const { id } = req.params
+    const data = readFile('users.json')
+    const user = data.find((u) => u.id == id)
+    if (!data) {
+      return res.status(400).json({
+        status: 400,
+        data: null,
+        msg: 'Users not found',
+      })
+    }
+
+    if (!user) {
+      res.status(200).json({
+        status: 200,
+        data: data,
+        msg: 'These are all users',
+      })
+    }
   } catch (error) {
     res.status(500).json({
       status: 500,
