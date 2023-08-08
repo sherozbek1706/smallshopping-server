@@ -1,6 +1,7 @@
 ### POST PRODUCT
 POST http://localhost:5000/products
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozfSwiaWF0IjoxNjkxNTA5MzM1fQ.ra3iUp4w-fr11JT0Oy4XIfxEVZyMWT3VkDK8EOH0t1Y
 
 {
   "name":"Anor",
@@ -13,20 +14,24 @@ Content-Type: application/json
 ### GET PRODUCT
 GET http://localhost:5000/products
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozfSwiaWF0IjoxNjkxNTA5MzM1fQ.ra3iUp4w-fr11JT0Oy4XIfxEVZyMWT3VkDK8EOH0t1Y
 
 ### GET ONE PRODUCT
 GET http://localhost:5000/products/aa5154f5-c9f0-4458-805c-baac72bb9a78
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozfSwiaWF0IjoxNjkxNTA5MzM1fQ.ra3iUp4w-fr11JT0Oy4XIfxEVZyMWT3VkDK8EOH0t1Y
 
 
 ### DELETE PRODUCT
-DELETE http://localhost:5000/products/ee7f5627-a0c8-4bf3-827c-4fa5a0ea7465
+DELETE http://localhost:5000/products/aa5154f5-c9f0-4458-805c-baac72bb9a78
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozfSwiaWF0IjoxNjkxNTA5MzM1fQ.ra3iUp4w-fr11JT0Oy4XIfxEVZyMWT3VkDK8EOH0t1Y
 
 
 ### UPDATE PRODUCT
-PUT http://localhost:5000/products/749d7396-0fd8-48df-8b7d-4152eb30c1f5
+PUT http://localhost:5000/products/aa5154f5-c9f0-4458-805c-baac72bb9a78
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozfSwiaWF0IjoxNjkxNTA5MzM1fQ.ra3iUp4w-fr11JT0Oy4XIfxEVZyMWT3VkDK8EOH0t1Y
 
 {
   "name":"Behi",

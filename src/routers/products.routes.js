@@ -6,11 +6,12 @@ import {
   getOneProducts,
   updateProducts,
 } from "../controller/products.js";
+import { verify } from "../middleware/verify.js";
 
 export const productsRouter = Router();
 
-productsRouter.post("/products", postProducts);
-productsRouter.get("/products", getProducts);
-productsRouter.get("/products/:id", getOneProducts);
-productsRouter.delete("/products/:id", deleteProducts);
-productsRouter.put("/products/:id", updateProducts);
+productsRouter.post("/products", verify, postProducts);
+productsRouter.get("/products", verify, getProducts);
+productsRouter.get("/products/:id", verify, getOneProducts);
+productsRouter.delete("/products/:id", verify, deleteProducts);
+productsRouter.put("/products/:id", verify, updateProducts);
