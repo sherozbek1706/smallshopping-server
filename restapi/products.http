@@ -22,3 +22,14 @@ Content-Type: application/json
 ### DELETE PRODUCT
 DELETE http://localhost:5000/products/ee7f5627-a0c8-4bf3-827c-4fa5a0ea7465
 Content-Type: application/json
+
+
+### UPDATE PRODUCT
+PUT http://localhost:5000/products/749d7396-0fd8-48df-8b7d-4152eb30c1f5
+Content-Type: application/json
+
+{
+  "name":"Behi",
+  "price": 52000,
+  "count": 120
+}
